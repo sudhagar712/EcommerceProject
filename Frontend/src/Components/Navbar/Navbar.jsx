@@ -1,62 +1,92 @@
-import React from 'react'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import 'ionicons';
+import { FaCartPlus } from "react-icons/fa6";
 
 const Navbar = () => {
-  return (
-    <div className="navbar bg-cyan-200">
-    <div className="flex-1">
-      <a className="btn btn-ghost text-xl">My_Ecommerce</a>
-    </div>
-    <div className="flex-none">
-      <div className="dropdown dropdown-end">
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-          <div className="indicator">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span className="badge badge-sm indicator-item">8</span>
-          </div>
-        </div>
-        <div
-          tabIndex={0}
-          className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
-          <div className="card-body">
-            <span className="text-lg font-bold">8 Items</span>
-            <span className="text-info">Subtotal: $999</span>
-            <div className="card-actions">
-              <button className="btn btn-primary btn-block">View cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="dropdown dropdown-end">
-        <div tabIndex={0} role="button" className="btn btn-ghost  avatar">
-         <h2>sudhagar</h2>
-        </div>
-        <ul
-          tabIndex={0}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li>
-            <a className="justify-between">
-              Profile
-              <span className="badge">New</span>
-            </a>
-          </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  )
-}
 
-export default Navbar
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleChange = () => {
+
+    setIsMenuOpen(!isMenuOpen);
+  }
+  return (
+    <div className="container-fluid ">
+      <header className="  bg-white md:py-3 py-3">
+        <nav className="flex justify-between items-center w-[92%]  ">
+          {/* Logo content */}
+          <div>
+            <Link to="/">
+              <h3 className="font-bold md:font-extrabold   md:text-3xl text-xl px-4 md:px-4 ">Ecommerce</h3>
+            </Link>
+          </div>
+
+          {/* menu list */}
+
+          <div className={` z-20  md:static bg-white  absolute md:min-h-fit min-h-[60vh]  left-0 top-[9%] w-full md:w-auto md:flex items-center px-5 transition-all duration-500 ease-in-out 
+            ${isMenuOpen ? 'block' : 'hidden'} md:block `}>
+            <ul className="flex md:flex-row flex-col md:items-center items-center md:gap-[4vw]  gap-8 md:mt-0 mt-[100px] ">
+              <li>
+                <Link
+                  to="/"
+                  className="hover:text-blue-700  md:font-bold font-bold  md:transition-all duration-500 ease-in-out  "
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/allproducts"
+                  id="allproducts"
+                  className="hover:text-blue-700  md:font-bold  font-bold transition-all duration-500 ease-in-out   "
+                >
+                  All Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="hover:text-blue-700  md:font-bold   font-bold  transition-all duration-500 ease-in-out "
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+
+          <div className="md:flex md:items-center  md:gap-5 flex items-center gap-2 ">
+            <div className="bg-[#d8192a] p-3 rounded-full ">
+              <FaCartPlus className="text-white" />
+            </div>
+
+            {/* button */}
+
+            <div>
+              <button className="bg-[#d8192a] text-white px-5 md:p-2 md:font-bold font-bold  py-2 rounded shadow-lg hover:shadow-2xl">
+                {" "}
+                <Link to="signup">SignUp</Link>
+              </button>
+            </div>
+
+
+            <div className="flex items-center gap-6 md:hidden">
+              <button className="  font-extrabold text-black bg-transparent p-2 rounded-xl">
+                <ion-icon onClick={toggleChange} name="menu" className="text-3xl cursor-pointer"></ion-icon>
+              </button>
+
+            </div>
+
+
+
+
+          </div>
+
+        </nav>
+      </header>
+    </div>
+  );
+};
+
+export default Navbar;
