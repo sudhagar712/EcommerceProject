@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import 'ionicons';
 import { FaCartPlus } from "react-icons/fa6";
 
+
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,11 @@ const Navbar = () => {
           {/* Logo content */}
           <div>
             <Link to="/">
-              <h3 className="font-bold md:font-extrabold   md:text-3xl text-xl px-4 md:px-4 ">Ecommerce</h3>
+              <h3 className="font-bold md:font-extrabold   md:text-3xl text-xl px-4 md:px-4  ">MSR_Kart</h3>
+              
+           
+
+
             </Link>
           </div>
 
@@ -32,24 +37,33 @@ const Navbar = () => {
                   to="/"
                   className="hover:text-blue-700  md:font-bold font-bold  md:transition-all duration-500 ease-in-out  "
                 >
-                  Home
+                  OwnProducts
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/allproducts"
+                  to="/mens"
                   id="allproducts"
                   className="hover:text-blue-700  md:font-bold  font-bold transition-all duration-500 ease-in-out   "
                 >
-                  All Products
+                  Mens
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  to="/womens"
+                  id="allproducts"
+                  className="hover:text-blue-700  md:font-bold  font-bold transition-all duration-500 ease-in-out   "
+                >
+                  Womens
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/kids"
                   className="hover:text-blue-700  md:font-bold   font-bold  transition-all duration-500 ease-in-out "
                 >
-                  Contact
+                  Kids
                 </Link>
               </li>
             </ul>
@@ -57,14 +71,14 @@ const Navbar = () => {
 
 
           <div className="md:flex md:items-center  md:gap-5 flex items-center gap-2 ">
-            <div className="bg-[#d8192a] p-3 rounded-full ">
-              <FaCartPlus className="text-white" />
+            <div className="bg-yellow-500 p-3 rounded-full  shadow-2xl">
+              <FaCartPlus className="" />
             </div>
 
             {/* button */}
 
             <div>
-              <button className="bg-[#d8192a] text-white px-5 md:p-2 md:font-bold font-bold  py-2 rounded shadow-lg hover:shadow-2xl">
+              <button className="bg-yellow-500 px-5 md:p-2 md:font-bold font-bold  py-2 rounded shadow-lg hover:shadow-2xl">
                 {" "}
                 <Link to="signup">SignUp</Link>
               </button>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Rating from "./Rating";
 
 const Product = ({ product }) => {
-  console.log(product)
+  // console.log(product)
   return (
     <Link to={`product/${product._id}`}>
       <div className="card bg-base-100   shadow-xl key={product._id}">

@@ -23,8 +23,8 @@ const ProductScreen = () => {
      
 
       <div className='grid md:grid-cols-2 mt-5'>
-        <div className='md:grid-cols-6 p-10 bg-yellow-100 rounded-full shadow-xl  '>
-          <img src={`${product.images}`}  alt="Product Image"  className="w-[400px] h-[400px] rounded"/>
+        <div className='md:grid-cols-6 p-5 bg-yellow-100 max-sm:p-2 max-sm:bg-gray-100  shadow-xxl   '>
+          <img src={`${product.images}`}  alt="Product Image"  className="max-sm:w-[400px] max-sm:h-[200px]    w-[900px] h-[400px] rounded"/>
         </div>
 
         <div className='md:grid-cols-6 p-10 '>

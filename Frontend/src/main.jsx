@@ -13,15 +13,24 @@ import Home from "./Pages/Home/Home.jsx";
 import Signup from "./Components/SignUp/Signup.jsx";
 import ProductScreen from "./Components/ProductScreen.jsx";
 import Login from "./Components/SignUp/Login.jsx";
+import Mens from "./Pages/Mens/Mens.jsx";
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+   <>
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<Home />} />
+    
       <Route  path="/product/:id" element={<ProductScreen />} />
+
+      <Route  path="/mens" element={<Mens />} />
+    </Route>
       <Route  path="/signup" element={<Signup />} />
       <Route  path="/login" element={<Login />} />
-    </Route>
+   </>
+    
   )
 );
 
