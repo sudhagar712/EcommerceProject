@@ -1,8 +1,8 @@
-export const products = [
+ const products = [
     {
       _id: 1,
-      name: "Mac / Iphone Devices",
-      images: "../src/assets/images/apple-iphone-smartphone-desk.jpg",
+      name: "Iphone 15",
+      images: "../src/assets/images/iphone15.webp",
       description:
         "A product is any item or service you sell to serve a customer's need or want. Products can be physical or virtual. Physical products",
         price: 10000,
@@ -89,5 +89,5 @@ export const products = [
     },
   ];
   
-
+export default products
   

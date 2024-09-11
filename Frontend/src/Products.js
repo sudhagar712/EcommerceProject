@@ -1,7 +1,7 @@
 const Products = [
   {
     _id: 1,
-    name: "Mac / Iphone Devices",
+    name: "Mac / Iphone ",
     images: "../src/assets/images/apple-iphone-smartphone-desk.jpg",
     description:
       "A product is any item or service you sell to serve a customer's need or want. Products can be physical or virtual. Physical products",
@@ -14,7 +14,7 @@ const Products = [
 
   {
     _id: 2,
-    name: "Makeup kit",
+    name: "Makeup kit ",
     images: "../src/assets/images/pexels-photo-1667071.jpeg",
     description:
       "A product is any item or service you sell to serve a customer's need or want. Products can be physical or virtual. Physical products",

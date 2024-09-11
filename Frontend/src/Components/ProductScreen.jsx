@@ -1,17 +1,48 @@
-import React from 'react';
+import React, {useState , useEffect} from 'react';
 import { Products } from '../Products';
 import { Link, useParams } from 'react-router-dom';
 import Rating from './Rating';
+import axios from 'axios'
+
+
+
+
 
 const ProductScreen = () => {
+
+const [product , setProduct] = useState({});
+
+
+
   const { id: productid } = useParams();
-  const product = Products.find((p) => p._id === Number(productid))
+  // const product = Products.find((p) => p._id === Number(productid))
 
-  console.log('Product:', product);
+  // console.log('Product:', product);
 
-  if (!product) {
-    return <div className='text-3xl flex justify-center items-center'>Product not found</div>;
-  }
+  console.log(productid)
+
+  useEffect(() => {
+
+    const fetchData = async () =>{
+      const { data } = await axios.get(`http://localhost:5000/api/products/${productid}`)
+
+      setProduct(data)
+    }
+
+     fetchData();
+
+  },[productid]);
+
+
+
+
+
+
+
+
+  // if (!product) {
+  //   return <div className='text-3xl flex justify-center items-center'>Product not found</div>;
+  // }
 
   return (
     <div className='mt-5 container'>
@@ -23,8 +54,8 @@ const ProductScreen = () => {
      
 
       <div className='grid md:grid-cols-2 mt-5'>
-        <div className='md:grid-cols-6 p-5 bg-yellow-100 max-sm:p-2 max-sm:bg-gray-100  shadow-xxl   '>
-          <img src={`${product.images}`}  alt="Product Image"  className="max-sm:w-[400px] max-sm:h-[200px]    w-[900px] h-[400px] rounded"/>
+        <div className='md:grid-cols-6 p-5  max-sm:p-2 max-sm:bg-gray-100  shadow-xxl   '>
+          <img src={`${product.images}`}  alt="Product Image"  className="max-sm:w-[400px] max-sm:h-[200px]    w-[800px] h-[400px] rounded"/>
         </div>
 
         <div className='md:grid-cols-6 p-10 '>
