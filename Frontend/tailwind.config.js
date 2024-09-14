@@ -8,6 +8,7 @@ export default {
     extend: {
       container:{
         center:'true',
+      
        
       }
     },
@@ -19,6 +20,8 @@ export default {
   },
   plugins: [
     require('daisyui'),
+
+    
 
    
 

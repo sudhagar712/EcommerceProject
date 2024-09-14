@@ -20,10 +20,6 @@ const Navbar = () => {
           <div>
             <Link to="/">
               <h3 className="font-bold md:font-extrabold   md:text-3xl text-xl px-4 md:px-4  ">MSR_Kart</h3>
-              
-           
-
-
             </Link>
           </div>
 
@@ -83,6 +79,9 @@ const Navbar = () => {
                 <Link to="signup">SignUp</Link>
               </button>
             </div>
+
+
+            
 
 
             <div className="flex items-center gap-6 md:hidden">

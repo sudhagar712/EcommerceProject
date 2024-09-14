@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Products } from '../Products';
 import { Link, useParams } from 'react-router-dom';
 import Rating from './Rating';
@@ -10,7 +10,7 @@ import axios from 'axios'
 
 const ProductScreen = () => {
 
-const [product , setProduct] = useState({});
+  const [product, setProduct] = useState({});
 
 
 
@@ -23,39 +23,36 @@ const [product , setProduct] = useState({});
 
   useEffect(() => {
 
-    const fetchData = async () =>{
+    const fetchData = async () => {
       const { data } = await axios.get(`http://localhost:5000/api/products/${productid}`)
 
       setProduct(data)
     }
 
-     fetchData();
+    fetchData();
 
-  },[productid]);
-
-
+  }, [productid]);
 
 
 
 
 
 
-  // if (!product) {
-  //   return <div className='text-3xl flex justify-center items-center'>Product not found</div>;
-  // }
+
+
 
   return (
     <div className='mt-5 container'>
       <div className="mx-5">
-      <Link to="/">
-        <button className="bg-[#c63233] text-white px-4 p-4 ">Back to Home</button>
-      </Link>
+        <Link to="/">
+          <button className="bg-[#c63233] text-white px-4 p-4 ">Back to Home</button>
+        </Link>
       </div>
-     
+
 
       <div className='grid md:grid-cols-2 mt-5'>
         <div className='md:grid-cols-6 p-5  max-sm:p-2 max-sm:bg-gray-100  shadow-xxl   '>
-          <img src={`${product.images}`}  alt="Product Image"  className="max-sm:w-[400px] max-sm:h-[200px]    w-[800px] h-[400px] rounded"/>
+          <img src={`${product.images}`} alt="Product Image" className="max-sm:w-[400px] max-sm:h-[200px]    w-[800px] h-[400px] rounded" />
         </div>
 
         <div className='md:grid-cols-6 p-10 '>
