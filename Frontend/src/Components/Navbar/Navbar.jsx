@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo-removebg-preview.png"
 import 'ionicons';
 import { FaCartPlus } from "react-icons/fa6";
 
@@ -13,13 +14,19 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   }
   return (
-    <div className="container-fluid ">
-      <header className="  bg-white md:py-3 py-3">
+    <div className="container   ">
+      <header className=" fixed top-0 left-0 w-full z-50 bg-white  p-5 shadow-2xl  md:py-5 py-3">
         <nav className="flex justify-between items-center w-[92%]  ">
           {/* Logo content */}
           <div>
             <Link to="/">
-              <h3 className="font-bold md:font-extrabold   md:text-3xl text-xl px-4 md:px-4  ">MSR_Kart</h3>
+              <h3
+                className="font-bold md:font-bold md:text-3xl text-xl px-4 md:px-4"
+              >
+                MSR_KART
+              </h3>
+
+              {/* <img src={logo} alt="" className="w-[200px] h-[50px]" /> */}
             </Link>
           </div>
 
@@ -31,9 +38,9 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/"
-                  className="hover:text-blue-700  md:font-bold font-bold  md:transition-all duration-500 ease-in-out  "
+                  className="hover:text-blue-700     md:font-bold font-bold  md:transition-all duration-500 ease-in-out  "
                 >
-                  OwnProducts
+                  AllProducts
                 </Link>
               </li>
               <li>
@@ -67,21 +74,21 @@ const Navbar = () => {
 
 
           <div className="md:flex md:items-center  md:gap-5 flex items-center gap-2 ">
-            <div className="bg-yellow-500 p-3 rounded-full  shadow-2xl">
+            <div className="bg-white md:shadow-lg p-3 rounded-full  shadow-2xl">
               <FaCartPlus className="" />
             </div>
 
             {/* button */}
 
             <div>
-              <button className="bg-yellow-500 px-5 md:p-2 md:font-bold font-bold  py-2 rounded shadow-lg hover:shadow-2xl">
+              <button className="hover:bg-yellow-500  px-5  md:p-4 md:px-10 md:font-bold font-bold  py-2 rounded-full  shadow-lg hover:shadow-2xl">
                 {" "}
                 <Link to="signup">SignUp</Link>
               </button>
             </div>
 
 
-            
+
 
 
             <div className="flex items-center gap-6 md:hidden">

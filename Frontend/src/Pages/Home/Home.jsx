@@ -31,7 +31,7 @@ const Home = () => {
 
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-[100px]">
       <Bannervideo />
 
       <h1 className="text-4xl md:mt-[200px]   font-extrabold ">All products</h1>

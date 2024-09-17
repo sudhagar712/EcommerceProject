@@ -1,9 +1,13 @@
 import express from "express";
 import products from "./data/products.js";
 import cors from 'cors'
+import connectDB from "./Config/db.js";
 
 const port = 5000;
 const app = express();
+
+connectDB(); // connect to mangodB
+
 
 app.use(cors())
 app.get("/", (req, res) => {

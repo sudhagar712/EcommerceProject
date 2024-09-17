@@ -8,9 +8,12 @@ const Product = ({ product }) => {
   return (
     <Link to={`product/${product._id}`}>
       <div className="card bg-base-100   shadow-xl key={product._id}">
-        <figure>
-          <img src={product.images} className="w-[400px] h-[400px] " />
-        </figure>
+      <figure>
+  <img
+    src={product.images}
+    className="w-[400px] h-[400px] transform transition-transform duration-400 hover:scale-110"
+  />
+</figure>
         <div className="card-body">
           <h1 className="card-title">{product.name}</h1>
           <div>
