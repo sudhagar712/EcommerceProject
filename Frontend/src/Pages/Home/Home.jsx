@@ -8,7 +8,6 @@ import noitems from "../../assets/images/noproduct.jpg"
 
 
 
-
 const Home = () => {
 
   const [products, setProducts] = useState([]);

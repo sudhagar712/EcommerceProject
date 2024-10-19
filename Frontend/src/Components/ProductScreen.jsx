@@ -5,9 +5,6 @@ import Rating from './Rating';
 import axios from 'axios'
 
 
-
-
-
 const ProductScreen = () => {
 
   const [product, setProduct] = useState({});
@@ -32,11 +29,6 @@ const ProductScreen = () => {
     fetchData();
 
   }, [productid]);
-
-
-
-
-
 
 
 
